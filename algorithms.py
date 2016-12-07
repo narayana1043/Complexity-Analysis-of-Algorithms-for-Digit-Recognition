@@ -31,6 +31,11 @@ class Classifier:
             # Create an empty set of params for future reference
             self.params = {}
 
+    def initZeroW(self, weights, bias):
+        wzeros = [np.zeros(w.shape) for w in weights]
+        bzeros = [np.zeros(b.shape) for b in bias]
+        return wzeros, bzeros
+
     def getparams(self):
         return self.params
 
@@ -135,7 +140,7 @@ class NeuralNet(Classifier):
             'cost':'crossentropyloss',
             'epochs': 1,
             'regularization': None,
-            'lmbda' : 0.1
+            'regwt' : 0.1
         }
         self.reset(parameters)
 
@@ -146,6 +151,9 @@ class NeuralNet(Classifier):
         if self.params['transfer'] is 'sigmoid':
             self.transfer = utils.sigmoid
             self.dtransfer = utils.dsigmoid
+        elif self.params['transfer'] is 'linear':
+            self.transfer = utils.linear
+            self.dtransfer = utils.dlinear
         else:
             # For now, only allowing sigmoid transfer
             raise Exception('NeuralNet -> cannot handle your transfer function')
@@ -161,11 +169,11 @@ class NeuralNet(Classifier):
 
         # Regularization function assignment
         if self.params['regularization'] == None:
-            self.reg = utils.reg
+            self.regularizer = utils.noreg
         elif self.params['regularization'] == 'L1':
-            self.reg = utils.regl1
+            self.regularizer = utils.regl1
         elif self.params['regularization'] == 'L2':
-            self.reg = utils.regl2
+            self.regularizer = utils.regl2
         else:
             # For now, only allowing L1 and L2 regularization
             raise Exception('NeuralNet -> cannot handle regularlization')
@@ -176,11 +184,6 @@ class NeuralNet(Classifier):
         w = [np.random.randn(y, x) for x,y in zip(nw_str[:-1],nw_str[1:])]
         b = [np.random.randn(y, 1) for y in nw_str[1:]]
         return w, b
-
-    def __initZeroW(self):
-        wzeros = [np.zeros(w.shape) for w in self.w]
-        bzeros = [np.zeros(b.shape) for b in self.b]
-        return wzeros, bzeros
 
     def learn(self, Xtrain, ytrain,):
 
@@ -198,8 +201,7 @@ class NeuralNet(Classifier):
         eeta = self.params['stepsize']      # step size
         mbs = self.params['mbs']            # mini batch size
         nts = self.nts                      # no of training samples
-        lmbda = self.params['lmbda']
-        n = self.nts
+        regwt = self.params['regwt']        # regularization parameter
         Z = [i for i in range(nts)]
 
 
@@ -220,7 +222,7 @@ class NeuralNet(Classifier):
 
                 # print(self.w, self.b)
 
-                self.w = [w - ((eeta/mbs)*w_change) + self.reg(w, lmbda, n, eeta)
+                self.w = [w - ((eeta/mbs)*w_change) + self.regularizer(w, regwt, nts, eeta)
                         for w, w_change in zip(self.w, w_batch_update)]
                 self.b = [b - ((eeta/mbs)*b_change)
                         for b, b_change in zip(self.b, b_batch_update)]
@@ -228,7 +230,7 @@ class NeuralNet(Classifier):
 
     def mini_batch_update(self, mini_batch):
 
-        w_batch_update, b_batch_update = self.__initZeroW()
+        w_batch_update, b_batch_update = self.initZeroW(self.w, self.b)
 
         for x, y in mini_batch:
 
@@ -248,7 +250,7 @@ class NeuralNet(Classifier):
         x = np.atleast_2d(x).T
         y = np.atleast_2d(y).T
 
-        w_sample_update, b_sample_update = self.__initZeroW()
+        w_sample_update, b_sample_update = self.initZeroW(self.w, self.b)
 
         lli, llo = self.feedforword(x)
 
@@ -294,3 +296,93 @@ class NeuralNet(Classifier):
             predictions.append(p)
         predictions = np.array(predictions)
         return predictions
+
+class MultiLogitReg(Classifier):
+
+    def __init__(self, parameters={}):
+        # Default: no regularization
+        self.params = {'epochs': 10,
+                       'mbs': 10,
+                       'regwgt': 0.0,
+                       'stepsize': 0.1,
+                       'regwt': 0.1,
+                       'regularizer': 'None'}
+        self.reset(parameters)
+
+    def reset(self, parameters):
+        self.resetparams(parameters)
+        if self.params['regularizer'] is 'l1':
+            self.regularizer = (utils.l1, utils.dl1)
+        elif self.params['regularizer'] is 'l2':
+            self.regularizer = (utils.l2, utils.dl2)
+        elif self.params['regularizer'] is 'elastic':
+            self.regularizer = (utils.l2, utils.dl2)
+        else:
+            self.regularizer = utils.noreg
+
+        self.transferfun = utils.softmax
+        self.dcostfun = utils.dsoftmax
+
+    def learn(self, Xtrain, ytrain):
+        self.w = np.random.rand(Xtrain.shape[1],ytrain.shape[1])
+        self.b = np.random.rand(ytrain.shape[1])
+        self.nts = Xtrain.shape[0]                         # number of training samples
+        self.SGD(Xtrain,ytrain)
+
+
+    def SGD(self, Xtrain, ytrain, ):
+
+        epochs = self.params['epochs']  # number of passes on train data
+        ss = self.params['stepsize']    # step size
+        mbs = self.params['mbs']        # mini batch size
+        nts = self.nts                  # no of training samples
+        regwt = self.params['regwt']    # regularllization parameter
+        Z = [i for i in range(nts)]
+        w = self.w
+        b = self.b
+
+        for epoch in range(epochs):
+            # print(epoch)
+            random.shuffle(Z)
+            Xtrain, ytrain = Xtrain[Z], ytrain[Z]
+
+            # generating mini batches
+            mini_batches = [Z[k:k + mbs] for k in range(0, nts, mbs)]
+            # mini_batches = [training_data[k:k+mbs] for k in range(0, nts, mbs)]
+
+            for mini_batch in mini_batches:
+                mini_batch_data = zip(Xtrain[mini_batch], ytrain[mini_batch])
+                w_batch_update, b_batch_update = self.initZeroW(self.w, self.b)
+
+                for x, y in mini_batch_data:
+                    softmax_input = np.dot(x, w) + b
+                    p = self.transferfun(softmax_input)
+                    dcost = self.dcostfun(y, p)
+                    w_change = np.dot(np.atleast_2d(x).T, np.atleast_2d(dcost))
+                    w_batch_update += w_change
+                    b_batch_update += dcost
+
+                # update the weights: Note the weights are being regularized where as the biases are not
+
+                # print(self.w, self.b)
+
+                w -= (ss / mbs) * w_batch_update + self.regularizer(w, regwt, nts, ss)
+                b -= (ss / mbs) * b_batch_update
+
+        self.weights = w
+        self.bias = b
+
+    def predict(self, Xtest):
+        w = self.weights
+        b = self.bias
+
+        predictions = []
+        for x in Xtest:
+            softmax_input = np.dot(x, w) + b
+            p = self.transferfun(softmax_input)
+            P = np.argmax(p)
+            predictions.append(P)
+        return np.array(predictions)
+
+
+

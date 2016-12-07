@@ -60,7 +60,7 @@ def load_mnist(validation_size=10):
     # print(Xtrain.shape,ytrain.shape)
     # print(Xvalidate.shape, yvalidate.shape)
     # print(Xtest.shape, ytest.shape)
-    print('data loaded')
+    # print('data loaded')
     return trainset, validationset, testset
 
 

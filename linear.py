@@ -20,25 +20,36 @@ def geterror(ytest, predictions):
 
 # if __name__ == '__main__':
 def start():
-
-    numruns = 30
+    numruns = 26
+    learnername = 'linearnets'
 
     classalgs = {
-        'K means': algos.Kmeans()
+        'linear network': algos.NeuralNet({'epochs': 100})
     }
 
-
+    '''
+    hidden_nw_str : includes hidden layers count of nodes.
+        ex: [20, 30, 50] --> hidden layer1 20 neurons, hidden layer2 30 neurons and hidden layer3 50 neurons
+    mbs : mini batch size
+    transfer : activation function in the linear network
+        available : [linear]
+    cost : cost function in the layer to compute the error
+        available : [squared loss]
+    epochs : number of times the entired data is used
+    regularization : to avoid over fitting
+        available : ['L2']
+    '''
     parameters = (
-        # {'nc':10},{'nc':20},{'nc':30},{'nc':40},
-        # {'nc':50},{'nc':60},{'nc':70},{'nc':80},{'nc':90},
-        {'nc':80},
+        {'hidden_nw_str': [30], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'linear', 'cost': 'squareloss',
+         'epochs': 10, 'regularization': 'L2', 'regwt':0.1},
     )
     numparams = len(parameters)
 
     errors = {}
 
     validationset_size = 1
-    trainset, validationset, testset = dtl.load_mnist_kmeans(validationset_size)
+    trainset, validationset, testset = dtl.load_mnist(validationset_size)
+    # trainset, testset = dtl.load_TT()
 
     for learnername in classalgs:
         errors[learnername] = np.zeros((numparams,numruns))
@@ -57,13 +68,13 @@ def start():
                 # Reset learner for new parameters
                 learner.reset(params)
                 print('Running learner = ' + learnername + ' on parameters ' + str(learner.getparams()))
-                start_time = time.time()
                 # Train model
+                start_time = time.time()
                 learner.learn(trainset[0], trainset[1])
                 # Test model
                 predictions = learner.predict(testset[0])
                 end_time = time.time()
-                print('Time Taken: ',end_time-start_time)
+                print('Time Taken: ', end_time - start_time)
                 error = geterror(testset[1], predictions)
                 print('Error for ' + learnername + ': ' + str(error))
                 print(r+1,',',error)

@@ -18,9 +18,9 @@ def getaccuracy(ytest, predictions):
 def geterror(ytest, predictions):
     return (100.0-getaccuracy(ytest, predictions))
 
-if __name__ == '__main__':
-
-    numruns = 1
+# if __name__ == '__main__':
+def start():
+    numruns = 26
     learnername = 'NeuralNets'
 
     classalgs = {
@@ -41,25 +41,27 @@ if __name__ == '__main__':
     '''
     parameters = (
         # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost':'squareloss',
-        #  'epochs': 1, 'regularization': 'L2', 'lmbda':0.1},
+        #  'epochs': 1, 'regularization': 'L2', 'regwt':0.1},
         # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
-        #  'epochs': 5, 'regularization': 'L2', 'lmbda':0.01},
+        #  'epochs': 5, 'regularization': 'L2', 'regwt':0.01},
+        {'hidden_nw_str': [30], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
+         'epochs': 10, 'regularization': 'L2', 'regwt':0.1},
         # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
-        #  'epochs': 10, 'regularization': 'L2', 'lmbda':0.1},
+        #  'epochs': 15, 'regularization': 'L2', 'regwt': 0.1},
         # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
-        #  'epochs': 15, 'regularization': 'L2', 'lmbda': 0.1},
+        #  'epochs': 20, 'regularization': 'L2', 'regwt': 0.1},
         # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
-        #  'epochs': 30, 'regularization': 'L2', 'lmbda': 0.1},
+        #  'epochs': 30, 'regularization': 'L2', 'regwt': 0.1},
         # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
-        #  'epochs': 50, 'regularization': 'L2', 'lmbda': 0.1},
+        #  'epochs': 50, 'regularization': 'L2', 'regwt': 0.1},
         # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
-        #  'epochs': 80, 'regularization': 'L2', 'lmbda': 0.1},
+        #  'epochs': 80, 'regularization': 'L2', 'regwt': 0.1},
         # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
-        #  'epochs': 100, 'regularization': 'L2', 'lmbda': 0.1},
-        {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
-         'epochs': 150, 'regularization': 'L2', 'lmbda': 0.1},
-        {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
-         'epochs': 300, 'regularization': 'L2', 'lmbda': 0.1},
+        #  'epochs': 100, 'regularization': 'L2', 'regwt': 0.1},
+        # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
+        #  'epochs': 150, 'regularization': 'L2', 'regwt': 0.1},
+        # {'hidden_nw_str': [100], 'mbs': 10, 'stepsize': 0.1, 'transfer': 'sigmoid', 'cost': 'crossentropyloss',
+        #  'epochs': 300, 'regularization': 'L2', 'regwt': 0.1},
     )
     numparams = len(parameters)
 
@@ -74,9 +76,9 @@ if __name__ == '__main__':
 
     for r in range(numruns):
 
-        # print(
-        #     ('Running on train={0} ,validation={1} and test={2} samples for run {2}').
-        #         format(len(trainset[0]), len(validationset[0]), len(testset[0]), r))
+        print(
+            ('Running on train={0} ,validation={1} and test={2} samples for run {2}').
+                format(len(trainset[0]), len(validationset[0]), len(testset[0]), r))
 
         for p in range(numparams):
             params = parameters[p]
@@ -95,6 +97,7 @@ if __name__ == '__main__':
                 print('Time Taken: ', end_time - start_time)
                 error = geterror(testset[1], predictions)
                 print('Error for ' + learnername + ': ' + str(error))
+                print(r+1,',',error)
                 errors[learnername][p, r] = error
 
 
@@ -112,3 +115,5 @@ if __name__ == '__main__':
         print('Best parameters for ' + learnername + ': ' + str(learner.getparams()))
         print('Average error for ' + learnername + ': ' + str(besterror) + ' +- ' + str(
             1.96 * np.std(errors[learnername][bestparams, :]) / math.sqrt(numruns)))
+
+    return errors[learnername][0]

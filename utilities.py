@@ -41,6 +41,12 @@ def dsigmoid(xvec):
     vecsig = sigmoid(xvec)
     return vecsig * (1 - vecsig)
 
+def linear(xvec):
+    return xvec
+
+def dlinear(xvec):
+    return xvec
+
 
 def l2(vec):
     """ l2 norm on a vector """
@@ -144,7 +150,7 @@ def dceloss(yhat, y):
 
 # Regularizations Functions
 
-def reg(w, lmbda, n, eeta):
+def noreg(w, lmbda, n, eeta):
     # No Regularization
     return 0
 
@@ -224,3 +230,21 @@ def getKmeanCenters(Xtrain, ytrain, nc, var=False):
             variances.append(np.var(cluster, axis=0))
 
     return np.array(centroids), np.array(variances)
+
+
+def softmax(inputs):
+    '''
+    Softmax Transfer function.
+    :param inputs: The data
+    :return: probabilities of each class
+    '''
+    return np.exp(inputs)/np.sum(np.exp(inputs))
+
+def dsoftmax(y, p):
+    '''
+    derivative of softmax cost function
+    :param p: prediction
+    :param y: actual
+    :return: weight update
+    '''
+    return (p - y)
