@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11719382-3905-4079-a658-a9401facf8f5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/linear.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/multilogit.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistical_analysis/kmeans.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistical_analysis/linear.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistical_analysis/multilogit.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistical_analysis/neuralnet.csv" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/project.iml" afterPath="$PROJECT_DIR$/.idea/project.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms.py" afterPath="$PROJECT_DIR$/algorithms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataloader.py" afterPath="$PROJECT_DIR$/dataloader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kmeans.py" afterPath="$PROJECT_DIR$/kmeans.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuralnet.py" afterPath="$PROJECT_DIR$/neuralnet.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities.py" afterPath="$PROJECT_DIR$/utilities.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multilogit.py" afterPath="$PROJECT_DIR$/multilogit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script.py" afterPath="$PROJECT_DIR$/script.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/statistical_analysis/multilogit.csv" afterPath="$PROJECT_DIR$/statistical_analysis/multilogit.csv" />
     </list>
     <ignored path="project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +24,57 @@
     <favorites_list name="project" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="multilogit.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/multilogit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+              <folding>
+                <element signature="e#138#294#0" expanded="false" />
+                <element signature="e#335#383#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="neuralnet.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuralnet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1394">
+              <caret line="95" column="38" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="38" />
+              <folding>
+                <element signature="e#199#353#0" expanded="false" />
+                <element signature="e#393#439#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linear.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/linear.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="42" column="96" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="101" />
+              <folding>
+                <element signature="e#199#353#0" expanded="false" />
+                <element signature="e#393#439#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -53,17 +91,17 @@
       <list>
         <option value="$PROJECT_DIR$/KmeansClustering.py" />
         <option value="$PROJECT_DIR$/script_classify.py" />
-        <option value="$PROJECT_DIR$/multilogit.py" />
         <option value="$PROJECT_DIR$/kmeans.py" />
         <option value="$PROJECT_DIR$/neuralnet.py" />
         <option value="$PROJECT_DIR$/utilities.py" />
         <option value="$PROJECT_DIR$/linear.py" />
-        <option value="$PROJECT_DIR$/script.py" />
         <option value="$PROJECT_DIR$/algorithms.py" />
         <option value="$PROJECT_DIR$/dataloader.py" />
         <option value="$PROJECT_DIR$/statistical_analysis/linear.csv" />
-        <option value="$PROJECT_DIR$/statistical_analysis/multilogit.csv" />
         <option value="$PROJECT_DIR$/statistical_analysis/kmeans.csv" />
+        <option value="$PROJECT_DIR$/statistical_analysis/multilogit.csv" />
+        <option value="$PROJECT_DIR$/multilogit.py" />
+        <option value="$PROJECT_DIR$/script.py" />
       </list>
     </option>
   </component>
@@ -98,7 +136,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -118,8 +155,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statistical_analysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -378,13 +430,21 @@
       <option name="presentableId" value="Default" />
       <updated>1480456655948</updated>
     </task>
+    <task id="LOCAL-00001" summary="data zipped,&#10;&#10;added script.py to run all files in a series&#10;&#10;codes modified:&#10;&#10;For future use we need to modify only the files that are named after the algorihtms as all the algorithms are in the algorithm file which need not be touched and can be used in other works as well">
+      <created>1481151930462</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481151930462</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23511904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23511904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.50542635" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -418,6 +478,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="data zipped,&#10;&#10;added script.py to run all files in a series&#10;&#10;codes modified:&#10;&#10;For future use we need to modify only the files that are named after the algorihtms as all the algorithms are in the algorithm file which need not be touched and can be used in other works as well" />
+    <option name="LAST_COMMIT_MESSAGE" value="data zipped,&#10;&#10;added script.py to run all files in a series&#10;&#10;codes modified:&#10;&#10;For future use we need to modify only the files that are named after the algorihtms as all the algorithms are in the algorithm file which need not be touched and can be used in other works as well" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -455,6 +519,47 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/multilogit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#138#294#0" expanded="false" />
+            <element signature="e#335#383#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="38" />
+          <folding>
+            <element signature="e#199#353#0" expanded="false" />
+            <element signature="e#393#439#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linear.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="42" column="96" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="101" />
+          <folding>
+            <element signature="e#199#353#0" expanded="false" />
+            <element signature="e#393#439#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/linear.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -493,9 +598,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -503,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -511,7 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -519,7 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -527,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -535,9 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2278">
           <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-          <folding>
-            <element signature="e#5289#5800#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -546,8 +642,8 @@
         <state relative-caret-position="1105">
           <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
           <folding>
-            <element signature="e#125#281#0" expanded="false" />
-            <element signature="e#322#370#0" expanded="false" />
+            <element signature="e#138#294#0" expanded="false" />
+            <element signature="e#335#383#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -556,18 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
-          <folding>
-            <element signature="e#246#872#0" expanded="false" />
-            <element signature="e#2048#3041#0" expanded="false" />
-            <element signature="e#3073#3109#0" expanded="false" />
-            <element signature="e#3131#3586#0" expanded="false" />
-            <element signature="e#3642#3709#0" expanded="false" />
-            <element signature="e#3820#5474#0" expanded="false" />
-            <element signature="e#5550#5753#0" expanded="false" />
-            <element signature="e#5793#5915#0" expanded="false" />
-            <element signature="e#5946#6097#0" expanded="false" />
-            <element signature="e#6119#6177#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -616,9 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2533">
           <caret line="156" column="4" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
-          <folding>
-            <element signature="e#5289#5800#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -626,18 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-          <folding>
-            <element signature="e#246#872#0" expanded="false" />
-            <element signature="e#2048#3041#0" expanded="false" />
-            <element signature="e#3073#3109#0" expanded="false" />
-            <element signature="e#3131#3586#0" expanded="false" />
-            <element signature="e#3642#3709#0" expanded="false" />
-            <element signature="e#3820#5474#0" expanded="false" />
-            <element signature="e#5550#5753#0" expanded="false" />
-            <element signature="e#5793#5915#0" expanded="false" />
-            <element signature="e#5946#6097#0" expanded="false" />
-            <element signature="e#6119#6177#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -686,9 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2533">
           <caret line="156" column="4" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
-          <folding>
-            <element signature="e#5289#5800#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -696,18 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#246#872#0" expanded="false" />
-            <element signature="e#2048#3041#0" expanded="false" />
-            <element signature="e#3073#3109#0" expanded="false" />
-            <element signature="e#3131#3586#0" expanded="false" />
-            <element signature="e#3642#3709#0" expanded="false" />
-            <element signature="e#3820#5474#0" expanded="false" />
-            <element signature="e#5550#5753#0" expanded="false" />
-            <element signature="e#5793#5915#0" expanded="false" />
-            <element signature="e#5946#6097#0" expanded="false" />
-            <element signature="e#6119#6177#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -749,9 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#5289#5800#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,18 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="181" column="56" selection-start-line="181" selection-start-column="56" selection-end-line="181" selection-end-column="56" />
-          <folding>
-            <element signature="e#246#872#0" expanded="false" />
-            <element signature="e#2048#3041#0" expanded="false" />
-            <element signature="e#3073#3109#0" expanded="false" />
-            <element signature="e#3131#3586#0" expanded="false" />
-            <element signature="e#3642#3709#0" expanded="false" />
-            <element signature="e#3820#5474#0" expanded="false" />
-            <element signature="e#5550#5753#0" expanded="false" />
-            <element signature="e#5793#5915#0" expanded="false" />
-            <element signature="e#5946#6097#0" expanded="false" />
-            <element signature="e#6119#6177#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -897,28 +936,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neuralnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding>
-            <element signature="e#199#353#0" expanded="false" />
-            <element signature="e#393#439#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linear.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="42" column="96" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="101" />
-          <folding>
-            <element signature="e#199#353#0" expanded="false" />
-            <element signature="e#393#439#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -942,21 +959,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statistical_analysis/linear.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,15 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/statistical_analysis/multilogit.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,7 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -988,20 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-          <folding>
-            <element signature="e#5289#5800#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/multilogit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
-          <folding>
-            <element signature="e#125#281#0" expanded="false" />
-            <element signature="e#322#370#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,17 +991,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statistical_analysis/multilogit.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linear.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="42" column="96" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="101" />
           <folding>
-            <element signature="e#246#872#0" expanded="false" />
-            <element signature="e#2048#3041#0" expanded="false" />
-            <element signature="e#3073#3109#0" expanded="false" />
-            <element signature="e#3131#3586#0" expanded="false" />
-            <element signature="e#3642#3709#0" expanded="false" />
-            <element signature="e#3820#5474#0" expanded="false" />
-            <element signature="e#5550#5753#0" expanded="false" />
-            <element signature="e#5793#5915#0" expanded="false" />
-            <element signature="e#5946#6097#0" expanded="false" />
-            <element signature="e#6119#6177#0" expanded="false" />
+            <element signature="e#199#353#0" expanded="false" />
+            <element signature="e#393#439#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="38" />
+          <folding>
+            <element signature="e#199#353#0" expanded="false" />
+            <element signature="e#393#439#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/multilogit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <element signature="e#138#294#0" expanded="false" />
+            <element signature="e#335#383#0" expanded="false" />
           </folding>
         </state>
       </provider>

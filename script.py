@@ -3,9 +3,9 @@ import neuralnet, multilogit, kmeans, linear
 
 algo_dict = {
     linear: 'linear',
-    # neuralnet: 'neuralnet',
-    # multilogit: 'multilogit',
-    # kmeans: 'kmeans'
+    neuralnet: 'neuralnet',
+    multilogit: 'multilogit',
+    kmeans: 'kmeans'
 }
 
 for algo, algo_name in algo_dict.items():

@@ -1,5 +1,7 @@
 import math
 import numpy as np
+import time
+
 import dataloader as dtl
 import algorithms as algs
 
@@ -19,7 +21,7 @@ def geterror(ytest, predictions):
 # if __name__ == '__main__':
 def start():
 
-    numruns = 30
+    numruns = 1
 
     trainset, validationset, testset = dtl.load_mnist(validation_size=1)
 
@@ -29,10 +31,15 @@ def start():
     numalgs = len(classalgs)
 
     parameters = (
-        {'stepsize': 0.1, 'mbs':10, 'epochs': 20, 'regularizer': 'L2', 'regwt': 0.1},
-        # {'stepsize': 0.1, 'mbs':10, 'epochs': 10, 'regularizer': 'L1', 'regwt': 0.1},
-        # {'stepsize': 0.1, 'mbs':10, 'epochs': 10, 'regularizer': None, 'regwt': 0.1},
-        # {'stepsize': 0.1, 'mbs':10, 'epochs': 10, 'regularizer': None, 'regwt': 0.1},
+        {'stepsize': 0.1, 'mbs': 10, 'epochs': 1, 'regularizer': 'L2', 'regwt': 0.1},
+        # {'stepsize': 0.1, 'mbs': 10, 'epochs': 3, 'regularizer': 'L2', 'regwt': 0.1},
+        # {'stepsize': 0.1, 'mbs': 10, 'epochs': 7, 'regularizer': 'L2', 'regwt': 0.1},
+        # {'stepsize': 0.1, 'mbs': 10, 'epochs': 10, 'regularizer': 'L2', 'regwt': 0.1},
+        # {'stepsize': 0.1, 'mbs': 10, 'epochs': 15, 'regularizer': 'L2', 'regwt': 0.1},
+        # {'stepsize': 0.1, 'mbs': 10, 'epochs': 20, 'regularizer': 'L2', 'regwt': 0.1},
+        # {'stepsize': 0.1, 'mbs': 10, 'epochs': 25, 'regularizer': 'L2', 'regwt': 0.1},
+        # {'stepsize': 0.1, 'mbs': 10, 'epochs': 30, 'regularizer': 'L2', 'regwt': 0.1},
+        # {'stepsize': 0.1, 'mbs': 10, 'epochs': 100, 'regularizer': 'L2', 'regwt': 0.1},
     )
     numparams = len(parameters)
 
@@ -53,9 +60,12 @@ def start():
                 learner.reset(params)
                 print('Running learner = ' + learnername + ' on parameters ' + str(learner.getparams()))
                 # Train model
+                start_time = time.time()
                 learner.learn(trainset[0], trainset[1])
                 # Test model
                 predictions = learner.predict(testset[0])
+                end_time = time.time()
+                print(end_time - start_time)
                 error = geterror(testset[1], predictions)
                 print('Error for ' + learnername + ': ' + str(error))
                 # print(r+1,',',error)
